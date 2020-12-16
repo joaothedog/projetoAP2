@@ -1,0 +1,19 @@
+JFXButton:hover{
+    -fx-cursor:hand;
+}
+
+.jfx-text-field, .jfx-password-field {
+    -fx-prompt-text-fill: gray;
+    -jfx-focus-color: white;
+    -jfx-unfocus-color: gray;
+}
+
+.enter:hover{
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.menuitemandclose:hover{
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0px 0px 3px 0px;
+}
