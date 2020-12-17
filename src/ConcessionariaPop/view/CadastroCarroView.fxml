@@ -25,7 +25,7 @@
                   <Image url="@../images/lupa.png" />
                </image>
             </ImageView>
-            <Label layoutX="33.0" layoutY="42.0" text="Carro" textFill="WHITE">
+            <Label layoutX="33.0" layoutY="42.0" text="Modelo" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="16.0" />
                </font>
@@ -40,7 +40,7 @@
                   <Font name="System Italic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="462.0" layoutY="41.0" text="KMs Rodados" textFill="WHITE">
+            <Label layoutX="554.0" layoutY="42.0" text="KMs Rodados" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="16.0" />
                </font>
@@ -52,8 +52,8 @@
             </Label>
             <TableView layoutX="8.0" layoutY="236.0" prefHeight="283.0" prefWidth="742.0" />
             <JFXComboBox layoutX="194.0" layoutY="124.0" prefHeight="28.0" prefWidth="238.0" />
-            <JFXTextField layoutX="33.0" layoutY="67.0" prefHeight="25.0" prefWidth="399.0" promptText="Digite aqui..." />
-            <JFXTextField layoutX="457.0" layoutY="67.0" prefHeight="25.0" prefWidth="238.0" promptText="Digite aqui..." />
+            <JFXTextField layoutX="33.0" layoutY="67.0" prefHeight="26.0" prefWidth="222.0" promptText="Digite aqui..." />
+            <JFXTextField layoutX="552.0" layoutY="67.0" prefHeight="26.0" prefWidth="143.0" promptText="Digite aqui..." />
             <JFXButton layoutX="729.0" onMouseClicked="#handleCloseWindow" prefHeight="19.0" prefWidth="14.0" styleClass="menuitemandclose" text="X" textFill="#bfbfbf">
                <font>
                   <Font name="Verdana Bold" size="14.0" />
@@ -87,7 +87,25 @@
                </graphic>
             </JFXButton>
             <JFXTextField layoutX="72.0" layoutY="190.0" prefHeight="25.0" prefWidth="222.0" promptText="Digite aqui..." />
-            <JFXToggleButton layoutX="22.0" layoutY="114.0" />
+            <JFXToggleButton layoutX="22.0" layoutY="114.0" prefHeight="58.0" prefWidth="43.0" text="." textFill="#cd0000" />
+            <JFXTextField layoutX="453.0" layoutY="67.0" prefHeight="26.0" prefWidth="78.0" promptText="Digite aqui..." />
+            <Label layoutX="453.0" layoutY="42.0" text="Ano" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="276.0" layoutY="67.0" prefHeight="26.0" prefWidth="164.0" promptText="Digite aqui..." />
+            <Label layoutX="272.0" layoutY="42.0" text="Marca" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="455.0" layoutY="125.0" prefHeight="26.0" prefWidth="238.0" promptText="Digite aqui..." />
+            <Label layoutX="453.0" layoutY="101.0" text="Preço" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </children>
 </AnchorPane>
