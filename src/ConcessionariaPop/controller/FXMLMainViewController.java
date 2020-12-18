@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 
 public class FXMLMainViewController implements Initializable {
-
+    @FXML
     private AnchorPane anchorpane;
     @FXML
     private AnchorPane anchorPaneMain;

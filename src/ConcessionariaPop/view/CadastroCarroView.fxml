@@ -77,7 +77,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton layoutX="609.0" layoutY="179.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#addCarro" prefWidth="34.0" text=" ">
+            <JFXButton layoutX="609.0" layoutY="179.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="34.0" text=" ">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
                      <image>
