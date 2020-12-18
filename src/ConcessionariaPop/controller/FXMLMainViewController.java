@@ -13,8 +13,11 @@ import javafx.scene.layout.AnchorPane;
 
 public class FXMLMainViewController implements Initializable {
 
-    @FXML
     private AnchorPane anchorpane;
+    @FXML
+    private AnchorPane anchorPaneMain;
+    @FXML
+    private AnchorPane anchorPaneHome;
   
     @FXML
     public void handleCloseWindow(MouseEvent event) {
@@ -69,9 +72,7 @@ public class FXMLMainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void ui1(MouseEvent event) {
-    }
+   
+    
     
 }
