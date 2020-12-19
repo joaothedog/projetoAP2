@@ -7,6 +7,9 @@ JFXButton:hover{
     -jfx-focus-color: white;
     -jfx-unfocus-color: gray;
 }
+.jfxTextWhite{
+    -fx-text-fill: white;
+}
 
 .enter:hover{
     -fx-border-color: #cccccc;
