@@ -1,25 +1,19 @@
 package ConcessionariaPop.model;
+
+import javafx.beans.property.SimpleStringProperty;
+
 public class Endereco {
-  private String logradouro;
   private int numero;
-  private String bairro;
-  private String cidade;
+  private SimpleStringProperty cidade, logradouro, bairro;
   
   public Endereco(String logradouro, int numero, String bairro, String cidade){
-    this.bairro=bairro;
-    this.cidade=cidade;
-    this.numero=numero;
-    this.logradouro=logradouro;
-      
+    this.bairro= new SimpleStringProperty(bairro);
+    this.cidade= new SimpleStringProperty(cidade);
+    this.numero= numero;
+    this.logradouro= new SimpleStringProperty(logradouro);    
   }
 
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
+    public Endereco(){}
 
     public int getNumero() {
         return numero;
@@ -29,21 +23,31 @@ public class Endereco {
         this.numero = numero;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getCidade() {
+        return cidade.get();
     }
 
-    public void setBairro(String bairro) {
+    public void setCidade(SimpleStringProperty cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getLogradouro() {
+        return logradouro.get();
+    }
+
+    public void setLogradouro(SimpleStringProperty logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getBairro() {
+        return bairro.get();
+    }
+
+    public void setBairro(SimpleStringProperty bairro) {
         this.bairro = bairro;
     }
 
-    public String getCidade() {
-        return cidade;
-    }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
   
   
 }

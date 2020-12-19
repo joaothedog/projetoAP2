@@ -12,13 +12,20 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
-import java.util.Optional;
-import javafx.scene.control.ButtonType;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.AnchorPane;
 
-public class FXMLCadastroViewController implements Initializable{
-    private List<Cliente> clientes = new ArrayList<>();
-    
+public class FXMLCadastroViewController implements Initializable{    
     @FXML
     private JFXTextField txtNome;
     @FXML
@@ -37,102 +44,157 @@ public class FXMLCadastroViewController implements Initializable{
     private JFXTextField txtPesquisar;
     @FXML
     private Label lblErro;
+    @FXML
+    private AnchorPane anchorPaneMain;
+    @FXML
+    private AnchorPane anchorPaneHome;
+    @FXML
+    private TableColumn<Cliente, String> colunaNome;
+    @FXML
+    private TableColumn<Cliente, String> colunaCPF;
+    @FXML
+    private TableColumn<Cliente, String> colunaTelefone;
+    @FXML
+    private TableColumn<Cliente, String> colunaCidade;
+    @FXML
+    private TableColumn<Cliente, String> colunaLogradouro;
+    @FXML
+    private TableColumn<Cliente, String> colunaBairro;
+    @FXML
+    private TableColumn<Cliente, String> colunaNum;
+    @FXML
+    private TableView<Cliente> tableViewClientes;
     
-    public void newRegister(MouseEvent event) throws Exception {   
+    @FXML
+    public void newRegister() throws Exception {   
         try{
-            String nome = txtNome.getText();
-            String cpf = txtCpf.getText();
-            String telefone = txtTelefone.getText();
-            String logradouro = txtLogradouro.getText();
-            int numero = Integer.parseInt(txtNumero.getText());
-            String bairro = txtBairro.getText();
-            String cidade = txtCidade.getText();
-        
-            clientes.add(new Cliente(nome, cpf, telefone, new Endereco(logradouro, numero, bairro, cidade)));
+       Cliente newCliente = new Cliente(txtNome.getText(),
+                                         txtCpf.getText(),
+                                         txtTelefone.getText(),
+                                         new Endereco (txtLogradouro.getText(),
+                                                       Integer.parseInt(txtNumero.getText()),
+                                                       txtBairro.getText(),
+                                                       txtCidade.getText()));
+        tableViewClientes.getItems().add(newCliente);      
+        txtNome.setText("");
+        txtCpf.setText("");
+        txtTelefone.setText("");
+        txtLogradouro.setText("");
+        txtNumero.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");      
+        lblErro.setText("");
         } catch (NullPointerException e){ //Parei aqui
             lblErro.setText("Preencha todos os campos");
+        } catch (NumberFormatException ex) {
+            lblErro.setText("Apenas números no campo 'Número'");
         }
+        //buscarCliente();
     }
     
-    // ainda não está completo por causa da tableview
-    public Cliente buscarCpf() {
-        String cpf = txtPesquisar.getText();
-        for(Cliente cliente: clientes)
-            if (cliente.getCpf().equals(cpf))
-                return cliente;
-        
-        throw new CampoVazioException("Cliente Inexistente", txtPesquisar);
-    }
-  
-    public void deletarPorCpf(MouseEvent event) throws Exception {
-        try{
-            lblErro.setText("");
-            Cliente cliente = buscarCpf();
-            Optional<ButtonType> confirmação = Alerts.showConfirmation("Remover cliente", "Tem certeza que deseja remover o cliente "
-                    + cliente.getNome() + "?");
-
-            if (confirmação.get().equals(ButtonType.OK)){
-                clientes.remove(cliente);
-                txtPesquisar.setText("");
-            }
-        } catch (CampoVazioException e){
-            lblErro.setText(e.getMessage());
-        }
-        
-    }
-    
+     
+    @FXML
     public void handleCloseWindow(MouseEvent event) {
         System.exit(0);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Teste 
-        Cliente c1 = new Cliente("Cris", "01654222", "12345678", new Endereco("Rua x", 21, "Centro", "City"));
-        Cliente c2 = new Cliente("Alan", "066103215", "12345678", new Endereco("Rua x", 21, "Centro", "City"));
-        Cliente c3 = new Cliente("Jao", "99872234", "12345678", new Endereco("Rua x", 21, "Centro", "City"));
-        
-        clientes.add(c1);
-        clientes.add(c2);
-        clientes.add(c3);
+        editTable();
+        tableViewClientes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tableViewClientes.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> selCliente(newValue));
+        updateTableClientes();
+        //buscarCliente();
     }
-   
-    /*
-    @FXML
-    void search_user() {          
-        col_id.setCellValueFactory(new PropertyValueFactory<users,Integer>("id"));
-        col_username.setCellValueFactory(new PropertyValueFactory<users,String>("username"));
-        col_password.setCellValueFactory(new PropertyValueFactory<users,String>("password"));
-        col_email.setCellValueFactory(new PropertyValueFactory<users,String>("email"));
-        col_type.setCellValueFactory(new PropertyValueFactory<users,String>("type"));
+    
+        ObservableList<Cliente> getClientes(){
+        ObservableList<Cliente> clienteList = FXCollections.observableArrayList();
+        clienteList.add(new Cliente("Dog","0876526263","(73)988751666", new Endereco("Rua x", 31, "Centro", "Vitória da Conquista")));
+        return clienteList;
+    }
         
-        dataList = mysqlconnect.getDatausers();
-        table_users.setItems(dataList);
-        FilteredList<users> filteredData = new FilteredList<>(dataList, b -> true);  
-        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
-        filteredData.setPredicate(person -> {
-            if (newValue == null || newValue.isEmpty()) {
+        @FXML
+        public void updateTableClientes(){
+        colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+        colunaCidade.setCellValueFactory((param) -> new SimpleStringProperty(param.getValue().getEndereco().getCidade()));
+        colunaNum.setCellValueFactory((param) -> new SimpleStringProperty(String.valueOf(param.getValue().getEndereco().getNumero())));
+        colunaBairro.setCellValueFactory((param) -> new SimpleStringProperty(param.getValue().getEndereco().getBairro()));
+        colunaLogradouro.setCellValueFactory((param) -> new SimpleStringProperty(param.getValue().getEndereco().getLogradouro()));
+        tableViewClientes.setItems(getClientes());
+        }
+   
+        @FXML
+        public void editTable(){
+        tableViewClientes.setEditable(true);
+        colunaNome.setCellFactory(TextFieldTableCell.forTableColumn());
+        colunaCPF.setCellFactory(TextFieldTableCell.forTableColumn());
+        colunaTelefone.setCellFactory(TextFieldTableCell.forTableColumn());
+        colunaCidade.setCellFactory(TextFieldTableCell.forTableColumn());
+        colunaNum.setCellFactory(TextFieldTableCell.forTableColumn());
+        colunaBairro.setCellFactory(TextFieldTableCell.forTableColumn());
+        colunaLogradouro.setCellFactory(TextFieldTableCell.forTableColumn());
+        }
+        
+        @FXML
+        public void selCliente(Cliente cliente){
+       
+          if (cliente != null){
+        txtNome.setText(cliente.getNome());
+        txtCpf.setText(cliente.getCpf());
+        txtTelefone.setText(cliente.getTelefone());
+        txtBairro.setText(cliente.getEndereco().getBairro());
+        txtNumero.setText(String.valueOf(cliente.getEndereco().getNumero()));
+        txtLogradouro.setText(cliente.getEndereco().getLogradouro());
+        txtCidade.setText(cliente.getEndereco().getCidade());
+        } else {
+            txtNome.setText("");
+            txtCpf.setText("");
+            txtTelefone.setText("");
+            txtBairro.setText("");
+            txtNumero.setText("");
+            txtLogradouro.setText("");
+            txtCidade.setText("");
+        }
+    }
+        
+    @FXML
+    public void delClienteSelect(){
+        ObservableList<Cliente> selectedRows, allCliente;
+        allCliente = tableViewClientes.getItems();
+        selectedRows = tableViewClientes.getSelectionModel().getSelectedItems();
+        
+        for(Cliente cliente: selectedRows){
+            allCliente.remove(cliente);
+        }
+
+        //buscarCliente();
+    }
+ 
+    @FXML
+    public void buscarCliente(){
+    updateTableClientes();     
+    
+    FilteredList<Cliente> filteredData = new FilteredList<>(getClientes(), b -> true);  
+    txtPesquisar.textProperty().addListener((observable, oldValue, newValue) -> {
+    filteredData.setPredicate(clientePesquisa -> {
+    if (newValue == null || newValue.isEmpty()) {
      return true;
     }    
     String lowerCaseFilter = newValue.toLowerCase();
     
-    if (person.getUsername().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+    if (clientePesquisa.getNome().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
      return true; // Filter matches username
-    } else if (person.getPassword().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+    } else if (clientePesquisa.getCpf().toLowerCase().indexOf(lowerCaseFilter) != -1) {
      return true; // Filter matches password
-    }else if (person.getType().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-     return true; // Filter matches password
-    }
-    else if (String.valueOf(person.getEmail()).indexOf(lowerCaseFilter)!=-1)
-         return true;// Filter matches email
-                                
-         else  
+    }else  
           return false; // Does not match.
    });
   });  
-  SortedList<users> sortedData = new SortedList<>(filteredData);  
-  sortedData.comparatorProperty().bind(table_users.comparatorProperty());  
-  table_users.setItems(sortedData);   
-    }
-*/
+    SortedList<Cliente> sortedData = new SortedList<>(filteredData);  
+    sortedData.comparatorProperty().bind(tableViewClientes.comparatorProperty());  
+    tableViewClientes.setItems(sortedData);      
+  }
 }
+    
