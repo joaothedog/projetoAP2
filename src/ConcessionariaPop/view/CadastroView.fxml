@@ -49,20 +49,11 @@
                </font>
             </Label>
             <TableView layoutX="6.0" layoutY="294.0" prefHeight="226.0" prefWidth="744.0" />
-            <JFXTextField layoutX="33.0" layoutY="68.0" prefHeight="25.0" prefWidth="399.0" promptText="Digite aqui..." />
-            <JFXTextField layoutX="33.0" layoutY="128.0" prefHeight="26.0" prefWidth="330.0" promptText="Digite aqui..." />
-            <JFXTextField layoutX="462.0" layoutY="128.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui..." />
-            <JFXTextField layoutX="462.0" layoutY="68.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui..." />
-            <JFXButton layoutX="541.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="34.0" text=" ">
-               <graphic>
-                  <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
-                     <image>
-                        <Image url="@../images/inserticon.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton layoutX="576.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="33.0" text=" ">
+            <JFXTextField fx:id="txtNome" layoutX="33.0" layoutY="68.0" prefHeight="25.0" prefWidth="399.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtLogradouro" layoutX="33.0" layoutY="128.0" prefHeight="26.0" prefWidth="330.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtTelefone" layoutX="462.0" layoutY="128.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtCpf" layoutX="462.0" layoutY="68.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui..." />
+            <JFXButton layoutX="625.0" layoutY="246.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#deletarPorCpf" prefWidth="33.0" text=" ">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" translateX="-4.5">
                      <image>
@@ -71,22 +62,22 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton layoutX="611.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="34.0" text=" ">
+            <JFXButton layoutX="660.0" layoutY="246.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#newRegister" prefWidth="34.0" text=" ">
                <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
+                  <ImageView fitHeight="23.0" fitWidth="24.0" onMouseClicked="#newRegister" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
                      <image>
                         <Image url="@../images/saveicon.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXTextField layoutX="72.0" layoutY="254.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtPesquisar" layoutX="72.0" layoutY="254.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui seu CPF..." />
             <JFXButton layoutX="727.0" onMouseClicked="#handleCloseWindow" prefHeight="19.0" prefWidth="14.0" styleClass="menuitemandclose" text="X" textFill="#bfbfbf">
                <font>
                   <Font name="Verdana Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXTextField layoutX="375.0" layoutY="128.0" prefHeight="26.0" prefWidth="66.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtNumero" layoutX="375.0" layoutY="128.0" prefHeight="26.0" prefWidth="66.0" promptText="Digite aqui..." />
             <Label layoutX="375.0" layoutY="105.0" text="Número" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="16.0" />
@@ -97,11 +88,16 @@
                   <Font name="System Italic" size="16.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="33.0" layoutY="192.0" prefHeight="26.0" prefWidth="330.0" promptText="Digite aqui..." />
-            <JFXTextField layoutX="375.0" layoutY="192.0" prefHeight="26.0" prefWidth="320.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtCidade" layoutX="33.0" layoutY="192.0" prefHeight="26.0" prefWidth="330.0" promptText="Digite aqui..." />
+            <JFXTextField fx:id="txtBairro" layoutX="375.0" layoutY="192.0" prefHeight="26.0" prefWidth="320.0" promptText="Digite aqui..." />
             <Label layoutX="375.0" layoutY="166.0" text="Bairro" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblErro" layoutX="365.0" layoutY="251.0" prefHeight="31.0" prefWidth="252.0" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
                </font>
             </Label>
          </children></AnchorPane>
