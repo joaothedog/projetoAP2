@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="756.0" styleClass="rootBorder" stylesheets="@../ConcessionariaPopMain/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConcessionariaPop.controller.FXMLMainViewController">
+   <children>
+      <AnchorPane fx:id="anchorPaneHome" layoutX="107.0" prefHeight="525.0" prefWidth="756.0" style="-fx-background-color: #bb2e3b;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="526.0" fitWidth="760.0" layoutY="14.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/xferrari_458_italia_carros_mais_bonitos.jpg.pagespeed.ic.vtRQ8AfgJq.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="117.0" layoutY="53.0" text="Esta aplicação faz parte do projeto da disciplina de APII" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="301.0" layoutY="154.0" text="Desenvolvedores" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/alanpng.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/crispng.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="392.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/eupng.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="550.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/rafapng.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="82.0" layoutY="355.0" text="Alan Bonfim" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="228.0" layoutY="355.0" text="Cristiano Costa" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="405.0" layoutY="355.0" text="João Oliveira" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="558.0" layoutY="355.0" text="Rafael Pereira" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="387.0" text="\@eusoujoaovitor" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="594.0" layoutY="387.0" text="\@rasfslotr" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="265.0" layoutY="387.0" text="\@crisaocost" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="387.0" text="\@alanzoka" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="729.0" onMouseClicked="#handleCloseWindow" prefHeight="19.0" prefWidth="14.0" styleClass="menuitemandclose" text="X" textFill="#bfbfbf">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

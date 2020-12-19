@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="863.0" styleClass="rootBorder" stylesheets="@../ConcessionariaPopMain/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConcessionariaPop.controller.FXMLMainViewController">
+   <children>
+      <AnchorPane prefHeight="525.0" prefWidth="100.0" style="-fx-background-color: #263a56;">
+         <children>
+            <JFXButton layoutY="33.0" onMouseClicked="#mostraHome" prefHeight="92.0" prefWidth="108.0">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/HomeIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutY="125.0" onMouseClicked="#mostraCadastro" prefHeight="92.0" prefWidth="108.0">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/AddClientIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutY="217.0" onMouseClicked="#mostraCadastroCarro" prefHeight="92.0" prefWidth="108.0">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/CarAddIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutY="309.0" onMouseClicked="#mostraAgendamento" prefHeight="92.0" prefWidth="108.0">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/AgendamentoIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutY="401.0" onMouseClicked="#mostraSobreNos" prefHeight="92.0" prefWidth="108.0">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/QuemSomosIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorpane" layoutX="107.0" prefHeight="525.0" prefWidth="756.0" style="-fx-background-color: #bb2e3b;">
+         <children>
+            <JFXButton layoutX="729.0" onMouseClicked="#handleCloseWindow" prefHeight="19.0" prefWidth="14.0" styleClass="menuitemandclose" text="X" textFill="#bfbfbf">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="526.0" fitWidth="760.0" layoutY="14.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/xferrari_458_italia_carros_mais_bonitos.jpg.pagespeed.ic.vtRQ8AfgJq.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" opacity="0.6" prefHeight="111.0" prefWidth="468.0" text="Painel Administrativo" textFill="#ebebeb" textOverrun="CLIP">
+               <font>
+                  <Font name="System Italic" size="49.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="74.0" prefHeight="55.0" prefWidth="232.0" text="Seja bem-vindo à PopCars" textFill="#ebebeb" textOverrun="CLIP">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="45.0" layoutX="201.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/AddClientIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="153.0" layoutY="286.0" prefHeight="25.0" prefWidth="143.0" text="Cadastro de clientes" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="45.0" layoutX="362.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/CarAddIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="325.0" layoutY="286.0" prefHeight="25.0" prefWidth="121.0" text="Cadastrar carros" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="45.0" layoutX="505.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/AgendamentoIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="469.0" layoutY="286.0" prefHeight="25.0" prefWidth="121.0" text="Agendar pedidos" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="280.0" layoutY="161.0" prefHeight="55.0" prefWidth="201.0" text="Neste painel é possível" textFill="#ebebeb" textOverrun="CLIP">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="299.0" layoutY="388.0" prefHeight="55.0" prefWidth="174.0" text="Att, Equipe PopCars" textFill="#ebebeb" textOverrun="CLIP">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

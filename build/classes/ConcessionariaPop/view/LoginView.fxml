@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="410.0" style="-fx-background-color: #25426E;" stylesheets="@../ConcessionariaPopMain/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConcessionariaPop.controller.FXMLLoginViewController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/popcarsicon2.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="JFXTextField" focusColor="#ff3d3d" layoutX="119.0" layoutY="241.0" prefHeight="25.0" prefWidth="215.0" promptText="nome de usuário..." unFocusColor="#a1a1a1">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="JFXPasswordField" focusColor="#ff3d3d" layoutX="119.0" layoutY="319.0" minHeight="-Infinity" prefHeight="36.0" prefWidth="215.0" promptText="insira sua senha..." unFocusColor="#a1a1a1">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </JFXPasswordField>
+      <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="76.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconuser.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="76.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconpass.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="loginButton" layoutX="176.0" layoutY="413.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#loginNew" prefHeight="55.0" prefWidth="59.0" styleClass="enter" text=" ">
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="42.0" layoutX="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconenter.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Hyperlink layoutX="158.0" layoutY="503.0" text="PopCars  © 2020" />
+      <JFXButton layoutX="378.0" layoutY="1.0" onMouseClicked="#handleCloseWindow" prefHeight="29.0" prefWidth="30.0" text="X" textFill="#bfbfbf">
+         <font>
+            <Font name="Verdana Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
