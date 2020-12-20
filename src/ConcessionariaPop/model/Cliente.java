@@ -1,5 +1,5 @@
 package ConcessionariaPop.model;
-public class Cliente {
+public class Cliente{
 private String nome;
 private String cpf;
 private String telefone;
@@ -7,9 +7,7 @@ private Endereco endereco;
 
 
 
-public Cliente(){
-    
-}
+public Cliente(){}
 
 public Cliente(String nome, String cpf, String telefone, Endereco endereco){
     this.nome=nome;
