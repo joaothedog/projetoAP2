@@ -16,6 +16,5 @@ public class CarroSemiNovo extends Carro{
     public int getKmRodado() {
         return kmRodado;
     }
-   
     
 }
