@@ -16,12 +16,12 @@
             <Image url="@../images/popcarsicon2.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="JFXTextField" focusColor="#ff3d3d" layoutX="119.0" layoutY="241.0" prefHeight="25.0" prefWidth="215.0" promptText="nome de usuário..." unFocusColor="#a1a1a1">
+      <JFXTextField fx:id="JFXTextField" focusColor="#ff3d3d" layoutX="119.0" layoutY="241.0" prefHeight="25.0" prefWidth="215.0" promptText="nome de usuário..." styleClass="jfxTextWhite" stylesheets="@../ConcessionariaPopMain/style.css" unFocusColor="#a1a1a1">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="JFXPasswordField" focusColor="#ff3d3d" layoutX="119.0" layoutY="319.0" minHeight="-Infinity" prefHeight="36.0" prefWidth="215.0" promptText="insira sua senha..." unFocusColor="#a1a1a1">
+      <JFXPasswordField fx:id="JFXPasswordField" focusColor="#ff3d3d" layoutX="119.0" layoutY="319.0" minHeight="-Infinity" prefHeight="36.0" prefWidth="215.0" promptText="insira sua senha..." styleClass="jfxTextWhite" stylesheets="@../ConcessionariaPopMain/style.css" unFocusColor="#a1a1a1">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>

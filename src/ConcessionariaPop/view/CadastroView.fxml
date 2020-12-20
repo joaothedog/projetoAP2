@@ -19,11 +19,6 @@
                   <Image url="@../images/xferrari_458_italia_carros_mais_bonitos.jpg.pagespeed.ic.vtRQ8AfgJq.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="30.0" layoutY="253.0" opacity="0.24" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/lupa.png" />
-               </image>
-            </ImageView>
             <Label layoutX="33.0" layoutY="42.0" text="Nome" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="16.0" />
@@ -51,13 +46,13 @@
             </Label>
             <TableView fx:id="tableViewClientes" layoutX="6.0" layoutY="294.0" prefHeight="226.0" prefWidth="744.0">
                <columns>
-                  <TableColumn fx:id="colunaNome" prefWidth="75.0" text="Nome" />
-                  <TableColumn fx:id="colunaCPF" prefWidth="88.0" text="CPF" />
-                  <TableColumn fx:id="colunaTelefone" prefWidth="92.0" text="Telefone" />
-                  <TableColumn fx:id="colunaCidade" prefWidth="105.0" text="Cidade" />
-                  <TableColumn fx:id="colunaLogradouro" prefWidth="237.0" text="Logradouro" />
-                  <TableColumn fx:id="colunaBairro" minWidth="0.0" prefWidth="76.0" text="Bairro" />
-                  <TableColumn fx:id="colunaNum" prefWidth="70.0" text="Número" />
+                  <TableColumn fx:id="colunaNome" onEditCommit="#onEditName" prefWidth="75.0" text="Nome" />
+                  <TableColumn fx:id="colunaCPF" onEditCommit="#onEditCpf" prefWidth="88.0" text="CPF" />
+                  <TableColumn fx:id="colunaTelefone" onEditCommit="#onEditTelefone" prefWidth="92.0" text="Telefone" />
+                  <TableColumn fx:id="colunaCidade" onEditCommit="#onEditCidade" prefWidth="105.0" text="Cidade" />
+                  <TableColumn fx:id="colunaLogradouro" onEditCommit="#onEditLogradouro" prefWidth="237.0" text="Logradouro" />
+                  <TableColumn fx:id="colunaBairro" minWidth="0.0" onEditCommit="#onEditBairro" prefWidth="76.0" text="Bairro" />
+                  <TableColumn fx:id="colunaNum" onEditCommit="#onEditNum" prefWidth="70.0" text="Número" />
                </columns></TableView>
             <JFXTextField fx:id="txtNome" layoutX="33.0" layoutY="68.0" prefHeight="25.0" prefWidth="399.0" promptText="Digite aqui..." styleClass="jfxTextWhite" stylesheets="@../ConcessionariaPopMain/style.css" />
             <JFXTextField fx:id="txtLogradouro" layoutX="33.0" layoutY="128.0" prefHeight="26.0" prefWidth="330.0" promptText="Digite aqui..." styleClass="jfxTextWhite" />
@@ -81,7 +76,16 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXTextField fx:id="txtPesquisar" layoutX="72.0" layoutY="254.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui seu CPF..." styleClass="jfxTextWhite" stylesheets="@../ConcessionariaPopMain/style.css" />
+            <JFXButton layoutX="22.0" layoutY="250.0" onMouseClicked="#searchClient" prefHeight="34.0" prefWidth="34.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="28.0" opacity="0.24" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/lupa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="txtPesquisar" layoutX="72.0" layoutY="254.0" prefHeight="25.0" prefWidth="227.0" promptText="Digite aqui..." styleClass="jfxTextWhite" stylesheets="@../ConcessionariaPopMain/style.css" />
             <JFXButton layoutX="727.0" onMouseClicked="#handleCloseWindow" prefHeight="19.0" prefWidth="14.0" styleClass="menuitemandclose" text="X" textFill="#bfbfbf">
                <font>
                   <Font name="Verdana Bold" size="14.0" />
@@ -105,11 +109,7 @@
                   <Font name="System Italic" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblErro" layoutX="365.0" layoutY="251.0" prefHeight="31.0" prefWidth="252.0" textFill="WHITE">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
+            <Label fx:id="lblErro" layoutX="365.0" layoutY="251.0" prefHeight="31.0" prefWidth="252.0" textFill="WHITE" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
