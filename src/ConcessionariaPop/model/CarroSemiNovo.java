@@ -12,5 +12,10 @@ public class CarroSemiNovo extends Carro{
    public void setKmRodado(int kmRodado){
         this.kmRodado=kmRodado;
     }
+
+    public int getKmRodado() {
+        return kmRodado;
+    }
+   
     
 }
