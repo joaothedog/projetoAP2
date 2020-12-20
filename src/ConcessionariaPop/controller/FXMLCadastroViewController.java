@@ -224,4 +224,3 @@ public class FXMLCadastroViewController implements Initializable{
         System.exit(0);
     }
 }
-    
