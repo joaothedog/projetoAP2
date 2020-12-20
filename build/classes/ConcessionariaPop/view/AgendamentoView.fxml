@@ -40,7 +40,7 @@
                   <Font name="System Italic" size="16.0" />
                </font>
             </Label>
-            <TableView fx:id="tableViewCarro" layoutX="5.0" layoutY="177.0" prefHeight="165.0" prefWidth="746.0">
+            <TableView fx:id="tableViewCarro" layoutX="5.0" layoutY="176.0" prefHeight="293.0" prefWidth="746.0">
                <columns>
                   <TableColumn fx:id="colummModelo" prefWidth="135.99999380111694" text="Modelo" />
                   <TableColumn fx:id="colummMarca" prefWidth="75.0" text="Marca" />
@@ -92,7 +92,6 @@
                   <Font name="System Italic" size="13.0" />
                </font>
             </Label>
-            <TableView layoutX="7.0" layoutY="364.0" prefHeight="146.0" prefWidth="746.0" />
             <JFXTextField fx:id="txtCarro" editable="false" layoutX="214.0" layoutY="54.0" prefHeight="26.0" prefWidth="348.0" />
             <Label layoutX="582.0" layoutY="29.0" text="Forma de Pagamento" textFill="WHITE">
                <font>
@@ -100,6 +99,10 @@
                </font>
             </Label>
             <JFXComboBox fx:id="cbFormaPagamento" layoutX="577.0" layoutY="55.0" prefHeight="26.0" prefWidth="150.0" />
+            <JFXButton layoutX="629.0" layoutY="482.0" onAction="#abrirHistorico" text="Abrir Histórico">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font></JFXButton>
          </children></AnchorPane>
    </children>
 </AnchorPane>
